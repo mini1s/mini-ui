@@ -1,0 +1,35 @@
+{
+    "name": "@minisquare/mini-ui",
+    "version": "0.0.1",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./tailwind.preset": "./tailwind.preset.js",
+        "./button.css": "./src/button.css",
+        "./theme.css": "./src/theme.css"
+    },
+    "files": [
+        "dist",
+        "tailwind.preset.js",
+        "src/button.css",
+        "src/theme.css"
+    ],
+    "scripts": {
+        "dev": "tsup --watch --onSuccess \"yalc push\""
+    },
+    "peerDependencies": {
+        "react": "^18 || ^19",
+        "react-dom": "^18 || ^19"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.16",
+        "@types/react-dom": "^19.2.3",
+        "tsup": "^8.5.1",
+        "typescript": "^6.0.3"
+    }
+}

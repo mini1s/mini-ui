@@ -1,0 +1,235 @@
+@layer components {
+    /* ─── Light theme ─── */
+    :root,
+    .light {
+        --button-text-color: var(--color-gray-900);
+
+        --button-default-lighter: var(--color-gray-100);
+        --button-default-darker: var(--color-gray-400);
+
+        --button-orange-lighter: var(--color-orange-300);
+        --button-orange-darker: var(--color-orange-600);
+
+        --button-yellow-lighter: var(--color-yellow-400);
+        --button-yellow-darker: var(--color-yellow-600);
+
+        --button-lime-lighter: var(--color-lime-300);
+        --button-lime-darker: var(--color-lime-600);
+
+        --button-green-lighter: var(--color-green-300);
+        --button-green-darker: var(--color-green-600);
+
+        --button-teal-lighter: var(--color-teal-400);
+        --button-teal-darker: var(--color-teal-600);
+
+        --button-cyan-lighter: var(--color-cyan-300);
+        --button-cyan-darker: var(--color-cyan-600);
+
+        --button-blue-lighter: var(--color-blue-300);
+        --button-blue-darker: var(--color-blue-500);
+
+        --button-indigo-lighter: var(--color-indigo-200);
+        --button-indigo-darker: var(--color-indigo-400);
+
+        --button-violet-lighter: var(--color-violet-200);
+        --button-violet-darker: var(--color-violet-400);
+
+        --button-grape-lighter: var(--color-grape-300);
+        --button-grape-darker: var(--color-grape-600);
+
+        --button-pink-lighter: var(--color-pink-400);
+        --button-pink-darker: var(--color-pink-600);
+
+        --button-red-lighter: var(--color-red-400);
+        --button-red-darker: var(--color-red-700);
+
+        --button-gray-lighter: var(--color-gray-300);
+        --button-gray-darker: var(--color-gray-400);
+
+        --button-selected-text-color: var(--color-blue-600);
+        --button-selected-lighter: var(--color-white);
+        --button-selected-darker: var(--color-blue-600);
+        --button-selected-border: var(--color-blue-600);
+
+        --button-disabled-text-color: var(--color-gray-400);
+        --button-disabled-lighter: var(--color-gray-50);
+        --button-disabled-darker: var(--color-gray-300);
+    }
+
+    /* ─── Dark theme ─── */
+    .dark {
+        --button-text-color: var(--color-gray-900);
+
+        --button-default-lighter: var(--color-gray-600);
+        --button-default-darker: var(--color-gray-700);
+
+        --button-orange-lighter: var(--color-orange-400);
+        --button-orange-darker: var(--color-orange-800);
+
+        --button-yellow-lighter: var(--color-yellow-400);
+        --button-yellow-darker: var(--color-yellow-700);
+
+        --button-lime-lighter: var(--color-lime-400);
+        --button-lime-darker: var(--color-lime-800);
+
+        --button-green-lighter: var(--color-green-400);
+        --button-green-darker: var(--color-green-800);
+
+        --button-teal-lighter: var(--color-teal-400);
+        --button-teal-darker: var(--color-teal-800);
+
+        --button-cyan-lighter: var(--color-cyan-400);
+        --button-cyan-darker: var(--color-cyan-800);
+
+        --button-blue-lighter: var(--color-blue-400);
+        --button-blue-darker: var(--color-blue-800);
+
+        --button-indigo-lighter: var(--color-indigo-400);
+        --button-indigo-darker: var(--color-indigo-800);
+
+        --button-violet-lighter: var(--color-violet-400);
+        --button-violet-darker: var(--color-violet-800);
+
+        --button-grape-lighter: var(--color-grape-400);
+        --button-grape-darker: var(--color-grape-800);
+
+        --button-pink-lighter: var(--color-pink-400);
+        --button-pink-darker: var(--color-pink-800);
+
+        --button-red-lighter: var(--color-red-500);
+        --button-red-darker: var(--color-red-800);
+
+        --button-gray-lighter: var(--color-gray-300);
+        --button-gray-darker: var(--color-gray-500);
+
+        --button-selected-text-color: var(--color-blue-600);
+        --button-selected-lighter: var(--color-white);
+        --button-selected-darker: var(--color-blue-600);
+        --button-selected-border: var(--color-blue-600);
+
+        --button-disabled-text-color: var(--color-gray-500);
+        --button-disabled-lighter: var(--color-gray-600);
+        --button-disabled-darker: var(--color-gray-700);
+    }
+
+    /* ─── Button base ─── */
+    .button {
+        position: relative;
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        padding: 0.25rem 1rem;
+        font-size: 1rem;
+        font-family: inherit;
+
+        --lighter-color: var(--button-default-lighter);
+        --darker-color: var(--button-default-darker);
+        --text-color: var(--button-text-color);
+
+        color: var(--text-color);
+        background-color: var(--lighter-color);
+        border-radius: 0.5rem;
+        border: 0.125rem solid var(--border-color, var(--lighter-color));
+        box-shadow: 0 0.25rem 0 0 var(--darker-color);
+        text-decoration: none;
+
+        &:not(:disabled):not(.disabled):not(.no-interact) {
+            cursor: pointer;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -0.125rem;
+            left: -0.125rem;
+            width: calc(100% + 0.25rem);
+            height: calc(100% + 0.25rem);
+        }
+
+        &:hover:not(:disabled):not(.disabled):not(.no-interact) {
+            border-color: var(--darker-color);
+        }
+
+        &:active:not(:disabled):not(.disabled):not(.no-interact) {
+            transform: translateY(0.25rem);
+            box-shadow: none;
+
+            &::before {
+                top: -0.375rem;
+            }
+        }
+
+        &.bold {
+            font-weight: 700;
+        }
+
+        &.orange {
+            --lighter-color: var(--button-orange-lighter);
+            --darker-color: var(--button-orange-darker);
+        }
+        &.yellow {
+            --lighter-color: var(--button-yellow-lighter);
+            --darker-color: var(--button-yellow-darker);
+        }
+        &.lime {
+            --lighter-color: var(--button-lime-lighter);
+            --darker-color: var(--button-lime-darker);
+        }
+        &.green {
+            --lighter-color: var(--button-green-lighter);
+            --darker-color: var(--button-green-darker);
+        }
+        &.teal {
+            --lighter-color: var(--button-teal-lighter);
+            --darker-color: var(--button-teal-darker);
+        }
+        &.cyan {
+            --lighter-color: var(--button-cyan-lighter);
+            --darker-color: var(--button-cyan-darker);
+        }
+        &.blue {
+            --lighter-color: var(--button-blue-lighter);
+            --darker-color: var(--button-blue-darker);
+        }
+        &.indigo {
+            --lighter-color: var(--button-indigo-lighter);
+            --darker-color: var(--button-indigo-darker);
+        }
+        &.violet {
+            --lighter-color: var(--button-violet-lighter);
+            --darker-color: var(--button-violet-darker);
+        }
+        &.grape {
+            --lighter-color: var(--button-grape-lighter);
+            --darker-color: var(--button-grape-darker);
+        }
+        &.pink {
+            --lighter-color: var(--button-pink-lighter);
+            --darker-color: var(--button-pink-darker);
+        }
+        &.red {
+            --lighter-color: var(--button-red-lighter);
+            --darker-color: var(--button-red-darker);
+        }
+        &.gray {
+            --lighter-color: var(--button-gray-lighter);
+            --darker-color: var(--button-gray-darker);
+        }
+
+        &.selected {
+            --text-color: var(--button-selected-text-color);
+            --lighter-color: var(--button-selected-lighter);
+            --darker-color: var(--button-selected-darker);
+            --border-color: var(--button-selected-border);
+        }
+
+        &.disabled,
+        &:disabled {
+            --text-color: var(--button-disabled-text-color);
+            --lighter-color: var(--button-disabled-lighter);
+            --darker-color: var(--button-disabled-darker);
+        }
+    }
+}
