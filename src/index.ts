@@ -1,4 +1,7 @@
+export { AuthForm } from "./components/auth-form"
 export { Footer } from "./components/footer"
 export { Header } from "./components/header"
 export { PolicyPage } from "./components/policy-page"
+export { Sidebar } from "./components/sidebar"
+export { Sitemap } from "./components/sitemap"
 export { StatusPage } from "./components/status-page"

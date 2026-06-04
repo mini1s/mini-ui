@@ -1,10 +1,18 @@
 # Mini Design System
 
-## Usage
+## Setup
+
+### Installation
+
+```
+npm install @minisquare/mini-ui
+```
 
 ### Fonts
 
-Ensure you have these fonts set in the root layout file.
+Ensure you have these fonts set up.
+
+`layout.tsx`
 
 ```tsx
 import { Rubik, Space_Grotesk, Roboto_Mono } from "next/font/google"
@@ -20,7 +28,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 const robotoMono = Roboto_Mono({
-    variable: "--font-roboto",
+    variable: "--font-roboto-mono",
     subsets: ["latin"],
 })
 
@@ -30,5 +38,17 @@ export default function RootLayout() {
             ...
         </html>
     )
+}
+```
+
+`globals.css`
+
+```css
+@import "tailwindcss";
+
+@theme {
+    --font-rubik: var(--font-rubik);
+    --font-space-grotesk: var(--font-space-grotesk);
+    --font-roboto-mono: var(--font-roboto-mono);
 }
 ```
