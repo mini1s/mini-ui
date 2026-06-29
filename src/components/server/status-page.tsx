@@ -1,5 +1,12 @@
-import { faSadCry } from "@fortawesome/free-solid-svg-icons"
+import { faSadCry, faSadTear } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+type IconName = "cry" | "tear"
+
+function mapIcon(name?: IconName) {
+    if (name == "tear") return faSadTear
+    else return faSadCry
+}
 
 export function StatusPage({
     Link,
@@ -7,6 +14,7 @@ export function StatusPage({
     title,
     text,
     iconClassName,
+    iconName,
     links,
 }: {
     Link: React.FC<{ href: string; [key: string]: any }>
@@ -14,12 +22,13 @@ export function StatusPage({
     title?: string
     text?: string
     iconClassName?: string
+    iconName?: IconName
     links?: { text: string; to: string; color?: string }[]
 }) {
     return (
         <div className="min-h-[50vh] flex-1 flex items-center justify-center p-16 gap-16 text-gray-800">
             <div className={iconClassName ?? `text-gray-400`}>
-                <FontAwesomeIcon icon={faSadCry} className="w-32" />
+                <FontAwesomeIcon icon={mapIcon(iconName)} className="w-32" />
             </div>
             <div className="flex flex-col gap-4">
                 {semititle && <h2 className="text-2xl font-space-grotesk font-bold text-gray-600">Error 404</h2>}
