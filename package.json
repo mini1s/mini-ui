@@ -20,7 +20,8 @@
         "src/theme.css"
     ],
     "scripts": {
-        "dev": "tsup --watch --onSuccess \"yalc push\""
+        "dev": "tsup --watch --onSuccess \"yalc push\"",
+        "build": "tsup"
     },
     "peerDependencies": {
         "@fortawesome/fontawesome-svg-core": "^7.2.0",
