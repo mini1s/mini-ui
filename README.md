@@ -34,7 +34,10 @@ const robotoMono = Roboto_Mono({
 
 export default function RootLayout() {
     return (
-        <html lang="en" className={`${rubik.variable} ${spaceGrotesk.variable} ${robotoMono.variable} h-full antialiased`}>
+        <html
+            lang="en"
+            className={`${rubik.variable} ${spaceGrotesk.variable} ${robotoMono.variable} h-full antialiased`}
+        >
             ...
         </html>
     )
@@ -45,6 +48,10 @@ export default function RootLayout() {
 
 ```css
 @import "tailwindcss";
+@import "@minisquare/mini-ui/theme.css";
+@import "@minisquare/mini-ui/button.css";
+@import "@minisquare/mini-ui/card.css";
+@source "../../node_modules/@minisquare/mini-ui/dist";
 
 @theme {
     --font-rubik: var(--font-rubik);

@@ -1,0 +1,51 @@
+@layer components {
+    :root,
+    .light {
+        --card-text-color: var(--color-gray-900);
+        --card-lighter-color: var(--color-white);
+        --card-darker-color: var(--color-gray-300);
+    }
+
+    .dark {
+        --card-text-color: var(--color-white);
+        --card-lighter-color: var(--color-gray-800);
+        --card-darker-color: var(--color-gray-700);
+    }
+
+    .card {
+        color: var(--card-text-color);
+        background-color: var(--card-lighter-color);
+        box-shadow: 0 0.5rem 0 0 var(--card-darker-color);
+        border: 0.25rem solid var(--card-lighter-color);
+        border-radius: 0.75rem;
+        padding: 2rem;
+
+        &:is(a) {
+            position: relative;
+            text-decoration: none;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -0.125rem;
+                left: -0.125rem;
+                width: calc(100% + 0.25rem);
+                height: calc(100% + 0.25rem);
+            }
+
+            &:hover:not([aria-disabled="true"]):not(.disabled) {
+                border-color: var(--card-darker-color);
+            }
+
+            &:active:not([aria-disabled="true"]):not(.disabled) {
+                transform: translateY(0.5rem);
+                box-shadow: none;
+
+                &::before {
+                    top: -0.75rem;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
     "name": "@minisquare/mini-ui",
-    "version": "0.0.1",
+    "version": "0.0.8",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
@@ -11,12 +11,14 @@
         },
         "./tailwind.preset": "./tailwind.preset.js",
         "./button.css": "./src/button.css",
+        "./card.css": "./src/card.css",
         "./theme.css": "./src/theme.css"
     },
     "files": [
         "dist",
         "tailwind.preset.js",
         "src/button.css",
+        "src/card.css",
         "src/theme.css"
     ],
     "scripts": {
