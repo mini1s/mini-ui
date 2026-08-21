@@ -40,7 +40,7 @@ export function Sidebar({ links, colors }: SidebarProps) {
 
     return (
         <div
-            className={`${collapsed ? "w-20" : "w-64"} py-8 px-4 flex flex-col justify-between gap-8 bg-white border-r border-gray-300 h-full font-rubik`}
+            className={`${collapsed ? "w-20" : "w-64"} min-[112.5rem]:absolute left-0 top-0 py-8 px-4 flex flex-col justify-between gap-8 bg-white border-r border-gray-300 h-full font-rubik`}
         >
             <div className="flex flex-col gap-2">
                 {links?.map((link, i) => {
@@ -50,7 +50,7 @@ export function Sidebar({ links, colors }: SidebarProps) {
                     const isActive =
                         link.to === "/"
                             ? pathname === "/"
-                            : pathname.startsWith(link.to)
+                            : pathname === link.to
 
                     return (
                         <Link
