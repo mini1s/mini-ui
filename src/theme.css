@@ -1,3 +1,5 @@
+@source "../dist";
+
 @theme inline {
     --color-*: initial; /* wipe all default colors */
 
