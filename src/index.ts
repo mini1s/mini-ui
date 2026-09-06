@@ -1,7 +1,7 @@
 export { AuthForm } from "./components/client/auth-form"
 export { Sidebar } from "./components/client/sidebar"
 export { Footer } from "./components/server/footer"
-export { Header } from "./components/server/header"
+export { Header } from "./components/client/header"
 export { PolicyPage } from "./components/server/policy-page"
 export { SidebarLayout } from "./components/server/sidebar-layout"
 export { ContentNextToSidebar } from "./components/server/sidebar-layout"
