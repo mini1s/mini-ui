@@ -67,7 +67,7 @@ export function Header({
                     <div className="px-8 h-16 w-full flex flex-col items-center justify-center">
                         <div className="w-full max-w-6xl flex items-center justify-end gap-8 ">
                             <button
-                                className="button gray lg:hidden"
+                                className="button gray"
                                 onClick={() => setMenuOpen((prev) => !prev)}
                             >
                                 <FontAwesomeIcon

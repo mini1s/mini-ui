@@ -25,7 +25,7 @@ export function Footer({
             className={`border-t-4 ${className} bg-white flex flex-col items-center p-16`}
         >
             <div className="w-full max-w-6xl">
-                <div className="flex justify-between gap-16 gap-x-24 flex-col md:flex-row">
+                <div className="flex justify-between gap-y-16 gap-x-24 flex-col md:flex-row">
                     <div className="flex flex-col gap-4">
                         <Link href="/" className="flex gap-3 items-center">
                             <img
