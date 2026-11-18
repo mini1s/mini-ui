@@ -31,7 +31,7 @@ export function StatusPage({
                 <div className={iconClassName ?? `text-gray-400`}>
                     <FontAwesomeIcon
                         icon={mapIcon(iconName)}
-                        className="w-32"
+                        className="text-[8rem]"
                     />
                 </div>
                 <div className="flex flex-col gap-4">

@@ -34,15 +34,15 @@ function isDivider(link: SidebarLink | SidebarDivider): link is SidebarDivider {
 }
 
 export function Sidebar({ links, colors }: SidebarProps) {
-    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const [collapsed, setCollapsed] = useState<boolean>(true)
 
     const pathname = usePathname()
 
     return (
         <div
-            className={`${collapsed ? "w-20" : "w-64"} min-[112.5rem]:absolute left-0 top-0 py-8 px-4 flex flex-col justify-between gap-8 bg-white border-r border-gray-300 h-full font-rubik`}
+            className={`${collapsed ? "w-20" : "w-64"} 2xl:w-64 min-[112.5rem]:absolute left-0 top-0 py-8 px-4 flex flex-col justify-between gap-8 bg-white border-r border-gray-300 h-full font-rubik`}
         >
-            <div className="flex flex-col gap-2">
+            <div className="sticky top-8 pb-15 flex flex-col gap-2">
                 {links?.map((link, i) => {
                     if (isDivider(link))
                         return <hr key={i} className="border-gray-300 my-2" />
@@ -55,7 +55,7 @@ export function Sidebar({ links, colors }: SidebarProps) {
                     return (
                         <Link
                             href={link.to}
-                            className={`flex gap-4 items-center px-2 py-2 rounded-lg ${collapsed ? "justify-center" : ""} ${isActive ? `font-semibold ${colors.activeLinkBg} ${colors.activeLinkBgHover}` : "hover:bg-gray-100 active-bg-gray-200"}`}
+                            className={`flex gap-4 items-center px-2 py-2 rounded-lg ${collapsed ? "justify-center 2xl:justify-start" : ""} ${isActive ? `font-semibold ${colors.activeLinkBg} ${colors.activeLinkBgHover}` : "hover:bg-gray-100 active-bg-gray-200"}`}
                             key={`${link.to}-${i}`}
                         >
                             <div className="w-[31px] h-6 flex-shrink-0 flex items-center justify-center">
@@ -64,13 +64,17 @@ export function Sidebar({ links, colors }: SidebarProps) {
                                     className={`text-xl ${colors.iconTextColor}`}
                                 />
                             </div>
-                            {!collapsed && <p>{link.text}</p>}
+                            <p
+                                className={`${collapsed && "hidden"} 2xl:inline`}
+                            >
+                                {link.text}
+                            </p>
                         </Link>
                     )
                 })}
             </div>
             <div
-                className={`px-4 flex flex-col ${collapsed ? "items-center" : "items-end"}`}
+                className={`2xl:hidden sticky bottom-8 px-4 flex flex-col ${collapsed ? "items-center" : "items-end"}`}
             >
                 <button
                     className="bg-gray-100 hover:bg-gray-200 w-7 h-7 rounded-lg text-gray-700 flex items-center justify-center cursor-pointer"
